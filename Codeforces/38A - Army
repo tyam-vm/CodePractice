@@ -1,5 +1,3 @@
-// Problem32
-//38A- Army
 #include <iostream>
 using namespace std;
 void solve();
@@ -7,12 +5,13 @@ void solve();
 void solve()
 { int n(1);
 cin >>n;
-int years[n];
-int loop1 =n;
-while(loop1--){cin >> years[n-loops1];}
+int years[n-1] ={0};
+for(int i(0); i<n-1;i++){
+    cin >> years[i];
+}
 int now , later , output(0);
 cin >> now>> later;
-for(now; now <later; now++){output += years[now-1];}
+while(now <later){output += years[now-1];now++;}
 cout << output;
 }
 
@@ -23,6 +22,4 @@ int n(1);
 while(n--)
 {
  solve();
-}
-
-}
+}}
