@@ -1,16 +1,22 @@
 // Problem34
-//34A - Reconnaissance 2
+//34A
 #include <iostream>
 using namespace std;
 void solve();
 
 void solve()
-{int n;
+{int n ,idxMin(1), idxMin2(1) ;
 cin >>n;
-for( int i(0), idxMin(1), idxMin2(1) , temp , min(1000); i<n; i++)
-{cin >> temp;
-if(min >= temp){ min = temp; idxMin = idxMin2; idxMin2 =i+1;}
+int a[n] ={0};
+for(int i(0),temp;i<n;i++){cin>> temp; a[i]=temp;}
+
+for( int i(0),min(1000),absValue; i<n-1; i++)
+{    for( int j(1); j<n-i;j++)
+        { absValue= abs(a[i]-a[i+j]);
+          if(min>absValue){idxMin=i+1;idxMin2=i+j+1;}
+        }
 }
+
 cout<< idxMin<< " "<<idxMin2;
 }
 
@@ -21,6 +27,5 @@ int n(1);
 while(n--)
 {
  solve();
-}
 }
 }
