@@ -1,4 +1,4 @@
-// Problem35
+// Problem40
 //
 #include <iostream>
 using namespace std;
@@ -8,7 +8,6 @@ void solve()
 {
 
 }
-
 int main()
 {
 int n(1);
@@ -16,6 +15,4 @@ int n(1);
 while(n--)
 {
  solve();
-}
-
-}
+}}
