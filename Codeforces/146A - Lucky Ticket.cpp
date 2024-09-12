@@ -2,7 +2,7 @@
 #include <iostream>
 void solve();
 using namespace std;
-int p146A()
+int main()
 {
     int n(1);
     // cin >> n;
@@ -20,7 +20,7 @@ void solve()
     cin >> len >> input;
     for (int i(0); i < len; i++)
     {
-        if (input[i] != '4' and input[i] != '7'){ cout << "NO"; return; }
+        if (input[i] != '4' && input[i] != '7'){ cout << "NO"; return; }
         if (i < len / 2) { first += int(input[i]); }
         else { last += int(input[i]); }
     }

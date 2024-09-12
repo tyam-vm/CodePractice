@@ -29,7 +29,7 @@ void solve()
 }
 
 
-int p80A()
+int main()
 {
     int n(1);
     // cin >> n;

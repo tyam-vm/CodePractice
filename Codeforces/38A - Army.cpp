@@ -7,7 +7,7 @@ void solve();
 void solve()
 { int n(1);
 cin >>n;
-int years[n-1] ={0};
+int years[1000] ={0};
 for(int i(0); i<n-1;i++){
     cin >> years[i];
 }

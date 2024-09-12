@@ -8,7 +8,7 @@ int gcd(int m, int n)
 {//m >n
     if (m == n) { return m; }
     if (m > n) { return gcd(m - n, n); }
-    else {return gcd(n-m,m) } // n>m
+    else {return gcd(n-m,m) ;} // n>m
 }
 void solve()
 {
@@ -26,7 +26,7 @@ void solve()
     }
 
 }
-int p119A()
+int main()
 {
     int n(1);
     // cin >> n;

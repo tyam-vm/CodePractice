@@ -18,7 +18,7 @@ void solve()
 
 
 
-int p112A()
+int main()
 {
     int n(1);
     // cin >> n;

@@ -32,7 +32,7 @@ void solve()
     }
     cout << "YES";
 } 
-int p141A()
+int main()
 {     
     int n(1);
     // cin >> n;

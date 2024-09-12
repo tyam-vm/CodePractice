@@ -14,7 +14,7 @@ void solve() {
     }
     cout << max;
 }
-int p116A()
+int main()
 {
     int n(1);
     // cin >> n;

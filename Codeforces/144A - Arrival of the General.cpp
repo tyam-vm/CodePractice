@@ -2,7 +2,7 @@
 #include <iostream>
 void solve();
 using namespace std;
-int p144A()
+int main()
 {
     int n(1);
     // cin >> n;

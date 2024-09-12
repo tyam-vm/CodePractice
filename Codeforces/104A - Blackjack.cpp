@@ -14,7 +14,7 @@ void solve()
 
 }
 
-int p104A()
+int main()
 {
     int n(1);
     // cin >> n;
