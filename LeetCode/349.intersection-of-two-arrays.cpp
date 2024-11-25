@@ -1,4 +1,3 @@
-
 /*
  * @lc app=leetcode id=349 lang=cpp
  *
@@ -10,6 +9,7 @@
 class Solution {
 public:
      //any way to not have to send the vetor. OH nevermind it send the pointer
+    /*
     int search(vector<int>& big , int elm, bool reset=false){
         static int i = 0;
         if(reset){
@@ -27,57 +27,55 @@ public:
             }
         }
         return -1;
-    }
+    } */
 
     
 
-    vector<int> clean(vector<int>& vec){
-        vector<int> rtn;
-        int temp = vec[0];
-        rtn.push_back(vec[0]);
-        for(int i =1; i < vec.size(); i++ ){
+    // vector<int> clean(vector<int>& vec){
+    //     vector<int> rtn;
+    //     int temp = vec[0];
+    //     rtn.push_back(vec[0]);
+    //     for(int i =1; i < vec.size(); i++ ){
             
-            if(temp != vec[i]){
-                rtn.push_back(vec[i]);
-                temp = vec[i];
-            }
-        }
-        return rtn;
-    }
+    //         if(temp != vec[i]){
+    //             rtn.push_back(vec[i]);
+    //             temp = vec[i];
+    //         }
+    //     }
+    //     return rtn;
+    // }
 
-    vector<int> intersectionHelper(vector<int>& big, vector<int>& small){
-        vector<int> rtn;
-        cout << "Hek";
-        for(int i=0, where =0 ; small.begin() +i != small.end();i++){
-            // need to optimise the small looping and the big looping (togather)?
-            where = search(big , small[i]);
-           
-            if(where >= 0){
-                rtn.push_back(small[i]);                
-            }
+    // vector<int> intersectionHelper(vector<int>& big, vector<int>& small){
+    //     vector<int> rtn;
+    //     for(int i=0, j =0 ,n = big.size(); small.begin() +i != small.end();i++){
+    //         // need to optimise the small looping and the big looping (togather)?
             
-        }
-        return rtn; 
-    } 
+    //        for(; j < n; j++){
+    //         if(small[i] < big[j]){
+    //             break;
+    //         }
+    //         if(small[i] == big[j]){
+    //             rtn.push_back(small[i]);
+    //             j++;
+    //             break;
+                
+    //         }
+    //        }
+            
+    //     }
+    //     return rtn; 
+    // } 
     
-public:
-   vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        search(nums1 , 0 , true);
-        if(nums1.size()==0 || nums2.size() ==0){
-            return {};
-        }
-        sort(nums1.begin(), nums1.end());
-        sort(nums2.begin(), nums2.end());
-        nums2 = clean(nums2);
-        nums1 = clean(nums1);
+
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        set<int> s1(nums1.begin(), nums1.end());
+        set<int> s2(nums2.begin(), nums2.end());
+        vector<int> ans(max(nums1.size(), nums2.size()));
+        vector<int>::iterator endidx = set_intersection(s1.begin(), s1.end(), s2.begin(), s2.end(), ans.begin());
+        ans.resize(endidx - ans.begin());
         
-        if(nums1.size() >= nums2.size()){
-            return intersectionHelper(nums1, nums2);
-        }
-        else{
-            return intersectionHelper(nums2, nums1);
-        }
-    }
+        return ans;
+};
 };
 // @lc code=end
 /*57/57 cases passed (55 ms)
