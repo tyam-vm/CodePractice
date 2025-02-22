@@ -8,27 +8,28 @@
 class Solution {
 public:
     bool isMonotonic(vector<int>& nums) {
-        if (nums.size()==1) return true;
-        else{
-            bool inc(true), dec(true);
-            int n = nums.size();
-            
-            for(int i =0; i < n-1; i++){
-                if(nums[i+1] > nums[i] ){
-                    
-                    dec = false;
-                }
-                if(nums[i+1] < nums[i] ){
-                    
-                    inc = false;
-                }
+        bool inc = false;
+        bool dec = false;
+        int size = nums.size();
 
-                if(!dec && !inc){
-                    return false;}         
-                }
-        
-        return true;           
+        if(size < 3){
+            return true;
         }
+        for(int i =0 ; i < size-1 ; i++){
+            if(nums[i] < nums[i+1]){
+                inc = true;
+            }
+
+            else if(nums[i] > nums[i+1]){
+                dec = true;
+            }
+
+            if(inc && dec){
+                return false;
+            }
+        }
+        return true;
+    
     }
 };
 // @lc code=end
